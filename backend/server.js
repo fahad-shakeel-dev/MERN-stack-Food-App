@@ -414,9 +414,17 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  console.log(`Request: ${req.method} ${req.url}`);
-  console.log("CORS headers:", res.getHeaders());
+// app.use((req, res, next) => {
+//   console.log(`Request: ${req.method} ${req.url}`);
+//   console.log("CORS headers:", res.getHeaders());
+//   next();
+// });
+
+app.use("/api/*", (req, res, next) => {
+  if (req.user && req.session.passport) {
+    console.log("Clearing Passport session-based req.user for API route");
+    delete req.user;
+  }
   next();
 });
 
