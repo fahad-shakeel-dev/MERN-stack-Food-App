@@ -3,186 +3,6 @@
 // import { StoreContext } from "../../context/StoreContext";
 // import axios from "axios";
 // import { toast } from "react-toastify";
-// import { useNavigate } from 'react-router-dom'
-
-// const PlaceOrder = () => {
-//   const navigate= useNavigate();
-
-//   const { getTotalCartAmount, token, food_list, cartItems, url } =
-//     useContext(StoreContext);
-//   const [data, setData] = useState({
-//     firstName: "",
-//     lastName: "",
-//     email: "",
-//     street: "",
-//     city: "",
-//     state: "",
-//     zipcode: "",
-//     country: "",
-//     phone: "",
-//   });
-
-//   const onChangeHandler = (event) => {
-//     const name = event.target.name;
-//     const value = event.target.value;
-//     setData((data) => ({ ...data, [name]: value }));
-//   };
-
-//   const placeOrder = async (event) => {
-//     event.preventDefault();
-//     let orderItems = [];
-//     food_list.map((item) => {
-//       if (cartItems[item._id] > 0) {
-//         let itemInfo = item;
-//         itemInfo["quantity"] = cartItems[item._id];
-//         orderItems.push(itemInfo);
-//       }
-//     });
-//     let orderData = {
-//       address: data,
-//       items: orderItems,
-//       amount: getTotalCartAmount() + 2,
-//     };
-    
-//     let response= await axios.post(url+"/api/order/place",orderData,{headers:{token}});
-//     if(response.data.success){
-//       const {session_url}=response.data;
-//       window.location.replace(session_url);
-//     }else{
-//       toast.error("Errors!")
-//     }
-//   };
-
-//   useEffect(()=>{
-//     if(!token){
-//       toast.error("Please Login first")
-//       navigate("/cart")
-//     }
-//     else if(getTotalCartAmount()===0){
-//       toast.error("Please Add Items to Cart");
-//       navigate("/cart")
-//     }
-//   },[token])
-//   return (
-//     <form className="place-order" onSubmit={placeOrder}>
-//       <div className="place-order-left">
-//         <p className="title">Delivery Information</p>
-//         <div className="multi-fields">
-//           <input
-//             required
-//             name="firstName"
-//             value={data.firstName}
-//             onChange={onChangeHandler}
-//             type="text"
-//             placeholder="First name"
-//           />
-//           <input
-//             required
-//             name="lastName"
-//             value={data.lastName}
-//             onChange={onChangeHandler}
-//             type="text"
-//             placeholder="Last name"
-//           />
-//         </div>
-//         <input
-//           required
-//           name="email"
-//           value={data.email}
-//           onChange={onChangeHandler}
-//           type="text"
-//           placeholder="Email Address"
-//         />
-//         <input
-//           required
-//           name="street"
-//           value={data.street}
-//           onChange={onChangeHandler}
-//           type="text"
-//           placeholder="Street"
-//         />
-//         <div className="multi-fields">
-//           <input
-//             required
-//             name="city"
-//             value={data.city}
-//             onChange={onChangeHandler}
-//             type="text"
-//             placeholder="City"
-//           />
-//           <input
-//             required
-//             name="state"
-//             value={data.state}
-//             onChange={onChangeHandler}
-//             type="text"
-//             placeholder="State"
-//           />
-//         </div>
-//         <div className="multi-fields">
-//           <input
-//             required
-//             name="zipcode"
-//             value={data.zipcode}
-//             onChange={onChangeHandler}
-//             type="text"
-//             placeholder="Zip Code"
-//           />
-//           <input
-//             required
-//             name="country"
-//             value={data.country}
-//             onChange={onChangeHandler}
-//             type="text"
-//             placeholder="Country"
-//           />
-//         </div>
-//         <input
-//           required
-//           name="phone"
-//           value={data.phone}
-//           onChange={onChangeHandler}
-//           type="text"
-//           placeholder="Phone"
-//         />
-//       </div>
-//       <div className="place-order-right">
-//         <div className="cart-total">
-//           <h2>Cart Totals</h2>
-//           <div>
-//             <div className="cart-total-details">
-//               <p>Subtotals</p>
-//               <p>${getTotalCartAmount()}</p>
-//             </div>
-//             <hr />
-//             <div className="cart-total-details">
-//               <p>Delivery Fee</p>
-//               <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
-//             </div>
-//             <hr />
-//             <div className="cart-total-details">
-//               <b>Total</b>
-//               <b>
-//                 ${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
-//               </b>
-//             </div>
-//           </div>
-//           <button type="submit">PROCEED TO PAYMENT</button>
-//         </div>
-//       </div>
-//     </form>
-//   );
-// };
-
-// export default PlaceOrder;
-
-
-
-// import React, { useContext, useEffect, useState } from "react";
-// import "./PlaceOrder.css";
-// import { StoreContext } from "../../context/StoreContext";
-// import axios from "axios";
-// import { toast } from "react-toastify";
 // import { useNavigate } from 'react-router-dom';
 
 // const PlaceOrder = () => {
@@ -205,7 +25,6 @@
 //     const name = event.target.name;
 //     const value = event.target.value;
 //     setData((prev) => ({ ...prev, [name]: value }));
-//     // Clear error for the field being edited
 //     setErrors((prev) => ({ ...prev, [name]: "" }));
 //   };
 
@@ -257,7 +76,8 @@
 //     let orderData = {
 //       address: data,
 //       items: orderItems,
-//       amount: getTotalCartAmount() + 2,
+//       // amount: getTotalCartAmount() + 2,
+//       amount: Math.round(getTotalCartAmount()) + 2,
 //     };
 //     try {
 //       const response = await axios.post(
@@ -288,11 +108,11 @@
 //   }, [token, getTotalCartAmount, navigate]);
 
 //   return (
-//     <form className="place-order" onSubmit={placeOrder}>
-//       <div className="place-order-left">
-//         <p className="title">Delivery Information</p>
-//         <div className="multi-fields">
-//           <div className="input-group">
+//     <form className="place-order-place-order" onSubmit={placeOrder}>
+//       <div className="place-order-place-order-left">
+//         <p className="place-order-title">Delivery Information</p>
+//         <div className="place-order-multi-fields">
+//           <div className="place-order-input-group">
 //             <input
 //               required
 //               name="firstName"
@@ -300,11 +120,11 @@
 //               onChange={onChangeHandler}
 //               type="text"
 //               placeholder="First name"
-//               className={errors.firstName ? "error" : ""}
+//               className={`place-order-input ${errors.firstName ? "place-order-error" : ""}`}
 //             />
-//             {errors.firstName && <span className="error-message">{errors.firstName}</span>}
+//             {errors.firstName && <span className="place-order-error-message">{errors.firstName}</span>}
 //           </div>
-//           <div className="input-group">
+//           <div className="place-order-input-group">
 //             <input
 //               required
 //               name="lastName"
@@ -312,12 +132,12 @@
 //               onChange={onChangeHandler}
 //               type="text"
 //               placeholder="Last name"
-//               className={errors.lastName ? "error" : ""}
+//               className={`place-order-input ${errors.lastName ? "place-order-error" : ""}`}
 //             />
-//             {errors.lastName && <span className="error-message">{errors.lastName}</span>}
+//             {errors.lastName && <span className="place-order-error-message">{errors.lastName}</span>}
 //           </div>
 //         </div>
-//         <div className="input-group">
+//         <div className="place-order-input-group">
 //           <input
 //             required
 //             name="email"
@@ -325,11 +145,11 @@
 //             onChange={onChangeHandler}
 //             type="email"
 //             placeholder="Email Address"
-//             className={errors.email ? "error" : ""}
+//             className={`place-order-input ${errors.email ? "place-order-error" : ""}`}
 //           />
-//           {errors.email && <span className="error-message">{errors.email}</span>}
+//           {errors.email && <span className="place-order-error-message">{errors.email}</span>}
 //         </div>
-//         <div className="input-group">
+//         <div className="place-order-input-group">
 //           <input
 //             required
 //             name="street"
@@ -337,12 +157,12 @@
 //             onChange={onChangeHandler}
 //             type="text"
 //             placeholder="Street"
-//             className={errors.street ? "error" : ""}
+//             className={`place-order-input ${errors.street ? "place-order-error" : ""}`}
 //           />
-//           {errors.street && <span className="error-message">{errors.street}</span>}
+//           {errors.street && <span className="place-order-error-message">{errors.street}</span>}
 //         </div>
-//         <div className="multi-fields">
-//           <div className="input-group">
+//         <div className="place-order-multi-fields">
+//           <div className="place-order-input-group">
 //             <input
 //               required
 //               name="city"
@@ -350,11 +170,11 @@
 //               onChange={onChangeHandler}
 //               type="text"
 //               placeholder="City"
-//               className={errors.city ? "error" : ""}
+//               className={`place-order-input ${errors.city ? "place-order-error" : ""}`}
 //             />
-//             {errors.city && <span className="error-message">{errors.city}</span>}
+//             {errors.city && <span className="place-order-error-message">{errors.city}</span>}
 //           </div>
-//           <div className="input-group">
+//           <div className="place-order-input-group">
 //             <input
 //               required
 //               name="state"
@@ -362,13 +182,13 @@
 //               onChange={onChangeHandler}
 //               type="text"
 //               placeholder="State"
-//               className={errors.state ? "error" : ""}
+//               className={`place-order-input ${errors.state ? "place-order-error" : ""}`}
 //             />
-//             {errors.state && <span className="error-message">{errors.state}</span>}
+//             {errors.state && <span className="place-order-error-message">{errors.state}</span>}
 //           </div>
 //         </div>
-//         <div className="multi-fields">
-//           <div className="input-group">
+//         <div className="place-order-multi-fields">
+//           <div className="place-order-input-group">
 //             <input
 //               required
 //               name="zipcode"
@@ -376,11 +196,11 @@
 //               onChange={onChangeHandler}
 //               type="text"
 //               placeholder="Zip Code"
-//               className={errors.zipcode ? "error" : ""}
+//               className={`place-order-input ${errors.zipcode ? "place-order-error" : ""}`}
 //             />
-//             {errors.zipcode && <span className="error-message">{errors.zipcode}</span>}
+//             {errors.zipcode && <span className="place-order-error-message">{errors.zipcode}</span>}
 //           </div>
-//           <div className="input-group">
+//           <div className="place-order-input-group">
 //             <input
 //               required
 //               name="country"
@@ -388,12 +208,12 @@
 //               onChange={onChangeHandler}
 //               type="text"
 //               placeholder="Country"
-//               className={errors.country ? "error" : ""}
+//               className={`place-order-input ${errors.country ? "place-order-error" : ""}`}
 //             />
-//             {errors.country && <span className="error-message">{errors.country}</span>}
+//             {errors.country && <span className="place-order-error-message">{errors.country}</span>}
 //           </div>
 //         </div>
-//         <div className="input-group">
+//         <div className="place-order-input-group">
 //           <input
 //             required
 //             name="phone"
@@ -401,31 +221,41 @@
 //             onChange={onChangeHandler}
 //             type="text"
 //             placeholder="Phone"
-//             className={errors.phone ? "error" : ""}
+//             className={`place-order-input ${errors.phone ? "place-order-error" : ""}`}
 //           />
-//           {errors.phone && <span className="error-message">{errors.phone}</span>}
+//           {errors.phone && <span className="place-order-error-message">{errors.phone}</span>}
 //         </div>
 //       </div>
-//       <div className="place-order-right">
-//         <div className="cart-total">
+//       <div className="place-order-place-order-right">
+//         <div className="place-order-cart-total">
 //           <h2>Cart Totals</h2>
 //           <div>
-//             <div className="cart-total-details">
+//             {/* <div className="place-order-cart-total-details">
 //               <p>Subtotal</p>
 //               <p>${getTotalCartAmount()}</p>
-//             </div>
+//             </div> */}
+
+//             <div className="place-order-cart-total-details">
+//         <p>Subtotal</p>
+//         <p>${Math.round(getTotalCartAmount())}</p>
+//       </div>
+
 //             <hr />
-//             <div className="cart-total-details">
+//             <div className="place-order-cart-total-details">
 //               <p>Delivery Fee</p>
 //               <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
 //             </div>
 //             <hr />
-//             <div className="cart-total-details">
+//             {/* <div className="place-order-cart-total-details">
 //               <b>Total</b>
 //               <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
-//             </div>
+//             </div> */}
+//                <div className="place-order-cart-total-details">
+//         <b>Total: </b>
+//         <b>${getTotalCartAmount() === 0 ? 0 : Math.round(getTotalCartAmount()) + 2}</b>
+//       </div>
 //           </div>
-//           <button type="submit">PROCEED TO PAYMENT</button>
+//           <button type="submit" className="place-order-button">PROCEED TO PAYMENT</button>
 //         </div>
 //       </div>
 //     </form>
@@ -433,17 +263,6 @@
 // };
 
 // export default PlaceOrder;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -511,6 +330,7 @@ const PlaceOrder = () => {
       toast.error("Please fill out all required fields correctly");
       return;
     }
+
     let orderItems = [];
     food_list.forEach((item) => {
       if (cartItems[item._id] > 0) {
@@ -518,25 +338,32 @@ const PlaceOrder = () => {
         orderItems.push(itemInfo);
       }
     });
+
     if (orderItems.length === 0) {
       toast.error("Cart is empty");
       navigate("/cart");
       return;
     }
+
     let orderData = {
       address: data,
       items: orderItems,
-      amount: getTotalCartAmount() + 2,
+      amount: Math.round(getTotalCartAmount()) + 2,
     };
+
     try {
       const response = await axios.post(
         `${url}/api/order/place`,
         orderData,
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );
+
       if (response.data.success) {
-        const { session_url } = response.data;
-        window.location.replace(session_url);
+        toast.success("Order placed successfully! 📞");
+        setTimeout(() => {
+          alert("Thank you! You’ll receive a confirmation call shortly to verify your order.");
+          navigate("/myorders");
+        }, 300);
       } else {
         toast.error(response.data.message || "Error placing order");
       }
@@ -558,11 +385,11 @@ const PlaceOrder = () => {
 
   return (
     <form className="place-order-place-order" onSubmit={placeOrder}>
-      <div className="place-order-place-order-left">
-        <p className="place-order-title">Delivery Information</p>
-        <div className="place-order-multi-fields">
-          <div className="place-order-input-group">
-            <input
+         <div className="place-order-place-order-left">
+     <p className="place-order-title">Delivery Information</p>
+         <div className="place-order-multi-fields">
+           <div className="place-order-input-group">
+             <input
               required
               name="firstName"
               value={data.firstName}
@@ -675,13 +502,14 @@ const PlaceOrder = () => {
           {errors.phone && <span className="place-order-error-message">{errors.phone}</span>}
         </div>
       </div>
+
       <div className="place-order-place-order-right">
         <div className="place-order-cart-total">
           <h2>Cart Totals</h2>
           <div>
             <div className="place-order-cart-total-details">
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>${Math.round(getTotalCartAmount())}</p>
             </div>
             <hr />
             <div className="place-order-cart-total-details">
@@ -690,11 +518,11 @@ const PlaceOrder = () => {
             </div>
             <hr />
             <div className="place-order-cart-total-details">
-              <b>Total</b>
-              <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
+              <b>Total: </b>
+              <b>${getTotalCartAmount() === 0 ? 0 : Math.round(getTotalCartAmount()) + 2}</b>
             </div>
           </div>
-          <button type="submit" className="place-order-button">PROCEED TO PAYMENT</button>
+          <button type="submit" className="place-order-button">CONFIRM ORDER</button>
         </div>
       </div>
     </form>

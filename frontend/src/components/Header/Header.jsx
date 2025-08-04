@@ -67,19 +67,22 @@ const Header = ({ onSearch }) => {
               </div>
               <input
                 type="text"
-                placeholder="Search for food or categories"
-                className="search-input"
+                placeholder="Order what you love."
+                className="search-input readonly-input"
+                
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyPress={handleKeyPress}
               />
+              <a href="/menu">
               <button
-                className="search-button"
+                className="search-button readonly-input"
                 onClick={handleSearch}
                 disabled={!searchQuery.trim()}
               >
                 <span className="truncate">Find Food</span>
               </button>
+              </a>
             </div>
           </div>
         </div>

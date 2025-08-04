@@ -1207,7 +1207,7 @@ const LoginPopup = ({ setShowLogin }) => {
           <p>By continuing, I agree to the terms of use & privacy policy.</p>
         </div>
         <div className="social-login">
-          <GoogleLoginButton
+          {/* <GoogleLoginButton
             onClick={() => handleSocialLogin("Google")}
             className="social-login-button"
             text="Continue with Google"
@@ -1216,7 +1216,28 @@ const LoginPopup = ({ setShowLogin }) => {
             onClick={() => handleSocialLogin("Facebook")}
             className="social-login-button"
             text="Continue with Facebook"
-          />
+          /> */}
+
+
+          <div className="custom-social-buttons">
+  <button
+    type="button"
+    onClick={() => handleSocialLogin("Google")}
+    className="custom-social-button google"
+  >
+    {/* <img src={assets.google_icon} alt="Google" className="social-icon" /> */}
+    Continue with Google
+  </button>
+  <button
+    type="button"
+    onClick={() => handleSocialLogin("Facebook")}
+    className="custom-social-button facebook"
+  >
+    {/* <img src={assets.facebook_icon} alt="Facebook" className="social-icon" /> */}
+    Continue with Facebook
+  </button>
+</div>
+
         </div>
         <p className="login-toggle">
           {currentState === "Login" ? (

@@ -404,26 +404,26 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.json());
-// app.use(
-//   cors({
-//     origin: ["http://localhost:5173", "http://localhost:5174"],
-//     credentials: true,
-//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//     allowedHeaders: ["Content-Type", "Authorization"],
-//     exposedHeaders: ["Set-Cookie"],
-//   })
-// );
-
-
 app.use(
   cors({
-    origin: ["https://fayzr-food.vercel.app", "https://fayzr-food-admin.vercel.app"],
+    origin: ["http://localhost:5173", "http://localhost:5174"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     exposedHeaders: ["Set-Cookie"],
   })
 );
+
+
+// app.use(
+//   cors({
+//     origin: ["https://fayzr-food.vercel.app", "https://fayzr-food-admin.vercel.app"],
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     exposedHeaders: ["Set-Cookie"],
+//   })
+// );
 
 
 

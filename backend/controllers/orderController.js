@@ -243,23 +243,149 @@
 
 
 
+// import orderModel from "../models/orderModel.js";
+// import userModel from "../models/userModel.js";
+
+
+// const placeOrder = async (req, res) => {
+//   try {
+//     const { items, amount, address } = req.body;
+
+//     if (!items || !Array.isArray(items) || items.length === 0) {
+//       return res.status(400).json({ success: false, message: "No items provided" });
+//     }
+//     if (!amount || typeof amount !== "number" || amount <= 0) {
+//       return res.status(400).json({ success: false, message: "Invalid amount" });
+//     }
+//     if (!address || !address.firstName || !address.email || !address.street || !address.city || !address.state || !address.zipcode || !address.country || !address.phone) {
+//       return res.status(400).json({ success: false, message: "Incomplete address information" });
+//     }
+
+//     const newOrder = new orderModel({
+//       userId: req.user.id,
+//       items,
+//       amount,
+//       address,
+//       payment: false, // for COD
+//       status: "Placed",
+//     });
+
+//     await newOrder.save();
+//     await userModel.findByIdAndUpdate(req.user.id, { cartData: {} });
+
+//     console.log(`COD Order placed for user ${req.user.id}:`, newOrder._id);
+//     res.json({ success: true, message: "Order placed successfully" });
+//   } catch (error) {
+//     console.error("Place order error:", error.message, error.stack);
+//     res.status(500).json({ success: false, message: error.message || "Error placing order" });
+//   }
+// };
+
+
+
+// const verifyOrder = async (req, res) => {
+//   const { orderId, success } = req.body;
+//   try {
+//     if (!orderId) {
+//       return res.status(400).json({ success: false, message: "Order ID is required" });
+//     }
+//     if (success === "true") {
+//       await orderModel.findByIdAndUpdate(orderId, { payment: true });
+//       console.log(`Order ${orderId} marked as paid`);
+//       res.json({ success: true, message: "Paid" });
+//     } else {
+//       await orderModel.findByIdAndDelete(orderId);
+//       console.log(`Order ${orderId} deleted due to payment failure`);
+//       res.json({ success: false, message: "Not Paid" });
+//     }
+//   } catch (error) {
+//     console.error("Verify order error:", error.message, error.stack);
+//     res.status(500).json({ success: false, message: "Error verifying order" });
+//   }
+// };
+
+// const userOrders = async (req, res) => {
+//   try {
+//     const orders = await orderModel.find({ userId: req.user.id }).lean();
+//     console.log(`Fetched user orders for ${req.user.id}:`, orders.length);
+//     res.json({ success: true, data: orders });
+//   } catch (error) {
+//     console.error("User orders error:", error.message, error.stack);
+//     res.status(500).json({ success: false, message: "Error fetching user orders" });
+//   }
+// };
+
+// const listOrders = async (req, res) => {
+//   try {
+//     if (req.user && req.user.role === "admin") {
+//       const orders = await orderModel.find({}).lean();
+//       console.log("Fetched all orders:", orders.length);
+//       res.json({ success: true, data: orders });
+//     } else {
+//       res.status(403).json({ success: false, message: "You are not admin" });
+//     }
+//   } catch (error) {
+//     console.error("List orders error:", error.message, error.stack);
+//     res.status(500).json({ success: false, message: "Error fetching orders" });
+//   }
+// };
+
+// const updateStatus = async (req, res) => {
+//   try {
+//     if (req.user && req.user.role === "admin") {
+//       const { orderId, status } = req.body;
+//       if (!orderId || !status) {
+//         return res.status(400).json({ success: false, message: "Order ID and status are required" });
+//       }
+//       await orderModel.findByIdAndUpdate(orderId, { status });
+//       console.log(`Updated status for order ${orderId} to: ${status}`);
+//       res.json({ success: true, message: "Status Updated Successfully" });
+//     } else {
+//       res.status(403).json({ success: false, message: "You are not admin" });
+//     }
+//   } catch (error) {
+//     console.error("Update status error:", error.message, error.stack);
+//     res.status(500).json({ success: false, message: "Error updating status" });
+//   }
+// };
+
+// export { placeOrder, verifyOrder, userOrders, listOrders, updateStatus };
+
+
+
+
+
+
+
+
+
+
+
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
-import Stripe from "stripe";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const placeOrder = async (req, res) => {
   const frontend_url = process.env.FRONTEND_URL || "http://localhost:5173";
   try {
     const { items, amount, address } = req.body;
+
     if (!items || !Array.isArray(items) || items.length === 0) {
       return res.status(400).json({ success: false, message: "No items provided" });
     }
     if (!amount || typeof amount !== "number" || amount <= 0) {
       return res.status(400).json({ success: false, message: "Invalid amount" });
     }
-    if (!address || !address.firstName || !address.email || !address.street || !address.city || !address.state || !address.zipcode || !address.country || !address.phone) {
+    if (
+      !address ||
+      !address.firstName ||
+      !address.email ||
+      !address.street ||
+      !address.city ||
+      !address.state ||
+      !address.zipcode ||
+      !address.country ||
+      !address.phone
+    ) {
       return res.status(400).json({ success: false, message: "Incomplete address information" });
     }
     if (!/^\S+@\S+\.\S+$/.test(address.email)) {
@@ -273,66 +399,72 @@ const placeOrder = async (req, res) => {
     }
 
     const newOrder = new orderModel({
-      userId: req.user.id,
+      userId: String(req.user.id), // Ensure string type
       items,
       amount,
       address,
+      payment: false, // COD orders start as unpaid
+      status: "Food Processing", // Aligned with OrderPage.js
+      date: new Date(),
     });
+
     await newOrder.save();
     await userModel.findByIdAndUpdate(req.user.id, { cartData: {} });
 
-    const line_items = items.map((item) => ({
-      price_data: {
-        currency: "usd",
-        product_data: { name: item.name },
-        unit_amount: Math.round(item.price * 100), // Ensure integer cents
-      },
-      quantity: item.quantity,
-    }));
-
-    line_items.push({
-      price_data: {
-        currency: "usd",
-        product_data: { name: "Delivery Charges" },
-        unit_amount: 2 * 100,
-      },
-      quantity: 1,
-    });
-
-    if (!process.env.STRIPE_SECRET_KEY) {
-      return res.status(500).json({ success: false, message: "Stripe secret key not configured" });
-    }
-
-    const session = await stripe.checkout.sessions.create({
-      line_items,
-      mode: "payment",
-      success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
-      cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
-    });
-
-    console.log(`Order placed for user ${req.user.id}:`, newOrder._id);
-    res.json({ success: true, session_url: session.url });
+    console.log(`COD Order placed for user ${req.user.id}:`, newOrder._id);
+    res.json({ success: true, message: "Order placed successfully", orderId: newOrder._id });
   } catch (error) {
     console.error("Place order error:", error.message, error.stack);
     res.status(500).json({ success: false, message: error.message || "Error placing order" });
   }
 };
 
+const cancelOrder = async (req, res) => {
+  try {
+    const { orderId } = req.body;
+    if (!orderId) {
+      return res.status(400).json({ success: false, message: "Order ID is required" });
+    }
+
+    const order = await orderModel.findById(orderId);
+    if (!order) {
+      return res.status(404).json({ success: false, message: "Order not found" });
+    }
+
+    if (String(order.userId) !== String(req.user.id)) { // Convert both to strings
+      return res.status(403).json({ success: false, message: "Unauthorized: You can only cancel your own orders" });
+    }
+
+    if (!["Food Processing", "Preparing"].includes(order.status)) {
+      return res.status(400).json({ success: false, message: "Order cannot be cancelled in its current status" });
+    }
+
+    await orderModel.findByIdAndUpdate(orderId, { status: "Cancelled" });
+    console.log(`Order ${orderId} cancelled by user ${req.user.id}`);
+    res.json({ success: true, message: "Order cancelled successfully" });
+  } catch (error) {
+    console.error("Cancel order error:", error.message, error.stack);
+    res.status(500).json({ success: false, message: error.message || "Error cancelling order" });
+  }
+};
+
 const verifyOrder = async (req, res) => {
-  const { orderId, success } = req.body;
+  const { orderId } = req.body;
   try {
     if (!orderId) {
       return res.status(400).json({ success: false, message: "Order ID is required" });
     }
-    if (success === "true") {
-      await orderModel.findByIdAndUpdate(orderId, { payment: true });
-      console.log(`Order ${orderId} marked as paid`);
-      res.json({ success: true, message: "Paid" });
-    } else {
-      await orderModel.findByIdAndDelete(orderId);
-      console.log(`Order ${orderId} deleted due to payment failure`);
-      res.json({ success: false, message: "Not Paid" });
+    const order = await orderModel.findById(orderId);
+    if (!order) {
+      return res.status(404).json({ success: false, message: "Order not found" });
     }
+    if (String(order.userId) !== String(req.user.id) && req.user.role !== "admin") {
+      return res.status(403).json({ success: false, message: "Unauthorized" });
+    }
+    // For COD, mark payment as true and status as Delivered (admin action)
+    await orderModel.findByIdAndUpdate(orderId, { payment: true, status: "Delivered" });
+    console.log(`Order ${orderId} marked as delivered and paid`);
+    res.json({ success: true, message: "Order verified (Delivered)" });
   } catch (error) {
     console.error("Verify order error:", error.message, error.stack);
     res.status(500).json({ success: false, message: "Error verifying order" });
@@ -341,7 +473,7 @@ const verifyOrder = async (req, res) => {
 
 const userOrders = async (req, res) => {
   try {
-    const orders = await orderModel.find({ userId: req.user.id }).lean();
+    const orders = await orderModel.find({ userId: String(req.user.id) }).lean(); // Ensure string type
     console.log(`Fetched user orders for ${req.user.id}:`, orders.length);
     res.json({ success: true, data: orders });
   } catch (error) {
@@ -384,4 +516,4 @@ const updateStatus = async (req, res) => {
   }
 };
 
-export { placeOrder, verifyOrder, userOrders, listOrders, updateStatus };
+export { placeOrder, verifyOrder, userOrders, listOrders, updateStatus, cancelOrder };
