@@ -74,7 +74,6 @@ Food-Delivery-main/
 MONGO_URL=mongodb://localhost:27017/foodapp
 JWT_SECRET=your_jwt_secret
 SALT=10
-STRIPE_SECRET_KEY=your_stripe_secret_key
 PORT=4000
 ```
 
@@ -113,11 +112,20 @@ npm install
 Create a `.env` file in the `/backend` folder:
 
 ```
-MONGO_URL=mongodb://localhost:27017/foodapp
-JWT_SECRET=your_jwt_secret
-SALT=10
-STRIPE_SECRET_KEY=your_stripe_secret_key
+MONGO_URL=your mongodb connection string
+JWT_SECRET=your jwt secret key
 PORT=4000
+SALT=your salt value for password hashing
+STRIPE_SECRET_KEY=your stripe secret key
+
+GOOGLE_CLIENT_ID=your google client id
+GOOGLE_CLIENT_SECRET=your google client secret
+GOOGLE_CALLBACK_URL=http://localhost:4000/api/auth/google/callback
+
+FACEBOOK_APP_ID=your facebook app id
+FACEBOOK_APP_SECRET=your facebook app secret
+FACEBOOK_CALLBACK_URL=http://localhost:4000/api/auth/facebook/
+
 ```
 
 Ensure MongoDB is running locally or use a cloud URL.
@@ -163,15 +171,10 @@ npm run dev
 
 ---
 
-## 📷 Screenshots (Optional)
+## 📷 Screenshots
 
-You can add screenshots in a `screenshots/` folder and include them like this:
 
-```md
 
-With the actual image names like this:
-
-```md
 ## 📷 Screenshots
 
 ### 👤 User Interface
