@@ -406,7 +406,7 @@ app.use(passport.session());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "https://fayzr-food.vercel.app", "https://fayzr-food-admin.vercel.app", "*"], // Added * for easier testing on Vercel, recommend changing to specific domains later
+    origin: true,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -442,7 +442,7 @@ app.use("/api/*", (req, res, next) => {
 });
 
 app.options("*", cors({
-  origin: ["http://localhost:5173", "http://localhost:5174", "https://fayzr-food.vercel.app", "https://fayzr-food-admin.vercel.app", "*"],
+  origin: true,
   credentials: true,
 }));
 
