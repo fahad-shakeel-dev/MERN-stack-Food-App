@@ -1,56 +1,705 @@
-.offers-page { width: 100%; padding: 24px 0; color: #203d2d; }
-.offers-page .offers-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 32px; padding: 28px 10px; background: linear-gradient(120deg, #eef3e5, #fbf8ef); border: 1px solid #e0e7d5; border-radius: 24px; }
-.offers-page .offers-hero-copy { min-width: 0; }
-.offers-page .offers-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #6a8347; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; }
-.offers-page .offers-hero h1 { font-size: clamp(32px, 4.8vw, 54px); line-height: 1.1; letter-spacing: -0.03em; margin: 18px 0; color: #193b2e; }
-.offers-page .offers-hero-copy > p { max-width: 410px; font-size: 15px; line-height: 1.8; color: #67755f; }
-.offers-page .offers-auto-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; color: #58703f; font-size: 12px; line-height: 1.6; }
-.offers-page .offers-auto-note svg { flex-shrink: 0; }
-.offers-page .offers-spotlight { position: relative; display: block; min-width: 0; overflow: hidden; border-radius: 18px; background: #244734; }
-.offers-page .offers-spotlight > img { display: block; width: 100%; height: 300px; object-fit: cover; }
-.offers-page .offers-spotlight::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 35%, #102a20ed); pointer-events: none; }
-.offers-page .offers-spotlight-badge { position: absolute; top: 16px; right: 16px; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border-radius: 50%; background: #eef3df; color: #29492e; font-size: 25px; font-weight: 700; box-shadow: 0 4px 16px #00000014; }
-.offers-page .offers-spotlight-badge small { font-size: 10px; letter-spacing: 0.16em; }
-.offers-page .offers-spotlight-caption { position: absolute; left: 16px; right: 16px; bottom: 20px; z-index: 1; color: #fffaf0; }
-.offers-page .offers-spotlight-caption > span:first-child { color: #d6e4b2; font-size: 10px; letter-spacing: 0.14em; }
-.offers-page .offers-spotlight-caption h2 { margin: 8px 0; font-size: 25px; line-height: 1.2; }
-.offers-page .offers-spotlight-link { display: inline-flex; gap: 8px; align-items: center; font-size: 12px; }
-.offers-page .offers-collection { margin-top: 42px; }
-.offers-page .offers-collection-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
-.offers-page .offers-collection-heading h2 { font-size: clamp(22px, 3vw, 28px); color: #244432; line-height: 1.3; }
-.offers-page .offers-collection-heading p { color: #7a8472; font-size: 13px; line-height: 1.6; margin-top: 8px; }
-.offers-page .offers-collection-icon { display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; color: #758e4d; background: #edf2e4; font-size: 19px; }
-.offers-page .offers-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
-.offers-page .offers-filters button { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid #dfe6d5; border-radius: 999px; color: #647656; background: #fff; cursor: pointer; font-size: 13px; font-weight: 500; }
-.offers-page .offers-filters button span { display: grid; place-items: center; min-width: 22px; height: 22px; border-radius: 50%; font-size: 11px; background: #eef2e7; color: #4f6838; }
-.offers-page .offers-filters button[aria-pressed="true"] { background: #234c37; color: #fffaf0; border-color: #234c37; }
-.offers-page .offers-filters button[aria-pressed="true"] span { background: #ffffff20; color: #e0ecc5; }
-.offers-page .offers-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.offers-page .offers-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid #e2e8da; border-radius: 20px; background: #fff; box-shadow: 0 4px 16px #234c3705; transition: transform 0.2s, box-shadow 0.2s; }
-.offers-page .offers-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px #234c3710; }
-.offers-page .offers-card-image { position: relative; display: block; overflow: hidden; background: #edf2e5; }
-.offers-page .offers-card-image img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.offers-page .offers-discount-badge { position: absolute; top: 12px; left: 12px; display: flex; flex-direction: column; padding: 8px 12px; border-radius: 12px; background: #234c37f2; color: #ecf2dd; font-size: 10px; text-align: center; }
-.offers-page .offers-discount-badge strong { font-size: 23px; line-height: 1.2; }
-.offers-page .offers-type-badge { position: absolute; right: 12px; bottom: 12px; padding: 6px 10px; border-radius: 999px; background: #fffaf0ed; color: #456034; font-size: 10px; font-weight: 600; }
-.offers-page .offers-card-body { display: flex; flex-direction: column; flex: 1; padding: 18px; }
-.offers-page .offers-target { color: #7d9254; font-size: 11px; font-weight: 600; }
-.offers-page .offers-card h3 { color: #244c35; font-size: 21px; line-height: 1.25; margin: 8px 0 12px; }
-.offers-page .offers-description { color: #778170; font-size: 13px; line-height: 1.75; margin-bottom: 18px; }
-.offers-page .offers-price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-top: auto; }
-.offers-page .offers-price-row strong { color: #315b38; font-size: 24px; }
-.offers-page .offers-price-row del { color: #97a18d; font-size: 13px; }
-.offers-page .offers-from { color: #75866a; font-size: 11px; }
-.offers-page .offers-eligibility { display: flex; align-items: center; gap: 6px; font-size: 11px; line-height: 1.5; color: #738967; margin-top: 8px; }
-.offers-page .offers-eligibility svg { flex-shrink: 0; }
-.offers-page .offers-card-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 20px; padding-top: 14px; border-top: 1px dashed #dce4d2; }
-.offers-page .offers-expiry { display: inline-flex; align-items: center; gap: 6px; color: #849077; font-size: 10px; }
-.offers-page .offers-card-action { display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 999px; background: #edf3e4; color: #3d6037; font-size: 12px; font-weight: 600; }
-.offers-page .offers-card-action:hover { background: #dee8ce; }
-.offers-page .offers-state { display: grid; justify-items: center; gap: 14px; padding: 48px 10px; color: #6a7b59; text-align: center; border: 1px dashed #d7e0ca; border-radius: 16px; }
-.offers-page .offers-state button, .offers-page .offers-state a { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #294d35; padding: 10px 16px; border-radius: 999px; background: #294d35; color: #fff; cursor: pointer; }
-.offers-page a:focus-visible, .offers-page button:focus-visible { outline: 3px solid #8ca561; outline-offset: 4px; }
-@media (max-width: 1024px) { .offers-page .offers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 768px) { .offers-page .offers-hero { grid-template-columns: minmax(0, 1fr); gap: 24px; } .offers-page .offers-spotlight > img { height: 240px; } }
-@media (max-width: 540px) { .offers-page .offers-grid { grid-template-columns: minmax(0, 1fr); } .offers-page .offers-hero { border-radius: 18px; } .offers-page .offers-card-body { padding: 16px; } }
-@media (prefers-reduced-motion: reduce) { .offers-page .offers-card { transition: none; } .offers-page .offers-card:hover { transform: none; } }
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.foodie-offers-page {
+  font-family: 'Poppins', sans-serif;
+  color: #0e1a13;
+  background-color: #f8fbfa;
+  min-height: 100vh;
+}
+
+.foodie-offers-header {
+  border-bottom: 1px solid #e8f2ec;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  background-color: #f8fbfa;
+  z-index: 100;
+}
+
+.foodie-offers-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.foodie-offers-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.foodie-offers-logo-icon {
+  width: 24px;
+  height: 24px;
+  color: #0e1a13;
+}
+
+.foodie-offers-logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0e1a13;
+  margin: 0;
+}
+
+.foodie-offers-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.foodie-offers-nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0e1a13;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+.foodie-offers-nav-link:hover {
+  color: #39e079;
+}
+
+.foodie-offers-nav-link.active {
+  color: #39e079;
+  font-weight: 600;
+}
+
+.foodie-offers-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #39e079;
+  border-radius: 3px 3px 0 0;
+}
+
+.foodie-offers-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.foodie-offers-search-container {
+  display: flex;
+  align-items: center;
+  background-color: #e8f2ec;
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 200px;
+  max-width: 300px;
+  height: 40px;
+}
+
+.foodie-offers-search-icon {
+  padding: 0 12px;
+  color: #51946b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foodie-offers-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px 12px 8px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #0e1a13;
+  outline: none;
+}
+
+.foodie-offers-search-input::placeholder {
+  color: #51946b;
+}
+
+.foodie-offers-notification-button {
+  background-color: #e8f2ec;
+  border: none;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0e1a13;
+  transition: background-color 0.3s ease;
+}
+
+.foodie-offers-notification-button:hover {
+  background-color: #d1e6d9;
+}
+
+.foodie-offers-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.foodie-offers-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foodie-offers-main {
+  padding: 20px 40px;
+}
+
+.foodie-offers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.foodie-offers-hero {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.foodie-offers-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0e1a13;
+  margin-bottom: 10px;
+}
+
+.foodie-offers-subtitle {
+  font-size: 1.125rem;
+  color: #51946b;
+  margin: 0;
+}
+
+.foodie-offers-section {
+  margin-bottom: 50px;
+}
+
+.foodie-offers-section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0e1a13;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.foodie-offers-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background-color: #39e079;
+  border-radius: 2px;
+}
+
+.foodie-special-offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.foodie-special-offer-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foodie-special-offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.foodie-special-offer-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.foodie-special-offer-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.foodie-special-offer-content {
+  padding: 20px;
+}
+
+.foodie-special-offer-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0e1a13;
+  margin: 0 0 10px 0;
+}
+
+.foodie-special-offer-description {
+  font-size: 0.875rem;
+  color: #51946b;
+  margin: 0 0 15px 0;
+}
+
+.foodie-special-offer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.foodie-special-offer-expiry {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.foodie-special-offer-button {
+  background-color: #39e079;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.foodie-special-offer-button:hover {
+  background-color: #2fc768;
+}
+
+.foodie-restaurant-offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.foodie-restaurant-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.foodie-restaurant-card:hover {
+  transform: translateY(-3px);
+}
+
+.foodie-restaurant-image {
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+.foodie-restaurant-info {
+  padding: 15px;
+}
+
+.foodie-restaurant-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0e1a13;
+  margin: 0 0 5px 0;
+}
+
+.foodie-restaurant-offer {
+  font-size: 0.75rem;
+  color: #51946b;
+  margin: 0 0 10px 0;
+}
+
+.foodie-restaurant-button {
+  background-color: #e8f2ec;
+  color: #0e1a13;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.foodie-restaurant-button:hover {
+  background-color: #d1e6d9;
+}
+
+.foodie-category-offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.foodie-category-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.foodie-category-card:hover {
+  transform: translateY(-3px);
+}
+
+.foodie-category-image {
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+.foodie-category-info {
+  padding: 15px;
+}
+
+.foodie-category-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0e1a13;
+  margin: 0 0 5px 0;
+}
+
+.foodie-category-offer {
+  font-size: 0.75rem;
+  color: #51946b;
+  margin: 0 0 10px 0;
+}
+
+.foodie-category-button {
+  background-color: #e8f2ec;
+  color: #0e1a13;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.foodie-category-button:hover {
+  background-color: #d1e6d9;
+}
+
+@media (max-width: 992px) {
+  .foodie-offers-header-content {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+  
+  .foodie-offers-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 15px;
+    border-top: 1px solid #e8f2ec;
+  }
+  
+  .foodie-offers-search-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .foodie-offers-main {
+    padding: 20px;
+  }
+  
+  .foodie-offers-title {
+    font-size: 2rem;
+  }
+  
+  .foodie-offers-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .foodie-special-offers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .foodie-restaurant-offers-grid,
+  .foodie-category-offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .foodie-offers-nav {
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    justify-content: flex-start;
+  }
+  
+  .foodie-offers-nav-link {
+    white-space: nowrap;
+  }
+} */
+
+
+
+
+
+
+
+
+
+.foodie-offers-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.foodie-offers-main {
+  padding: 20px 0;
+}
+
+.foodie-offers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.foodie-offers-hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #fff8f3 0%, #ffe8dc 100%);
+  border: 1px solid #f6d5c6;
+  border-radius: 12px;
+  color: #292521;
+}
+
+.foodie-offers-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #df5038;
+}
+
+.foodie-offers-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #6c625d;
+}
+
+.foodie-offers-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.foodie-offers-section {
+  padding: 20px 0;
+}
+
+.foodie-offers-section-title {
+  font-size: 28px;
+  color: #1a2a44;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.foodie-offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.foodie-offer-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.foodie-offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.foodie-offer-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.foodie-offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ef4444;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.foodie-offer-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.foodie-offer-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a2a44;
+}
+
+.foodie-offer-description {
+  font-size: 16px;
+  color: #374151;
+}
+
+.foodie-offer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.foodie-offer-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.foodie-offer-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.foodie-offer-button:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+.no-offers {
+  text-align: center;
+  font-size: 18px;
+  color: #1a2a44;
+  font-weight: 500;
+  padding: 30px;
+  background-color: #e5e7eb;
+  border-radius: 12px;
+  border: 2px dashed #2563eb;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #d1d5db;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-toast {
+  background-color: #ff4d4d;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .foodie-offers-page {
+    padding: 15px;
+  }
+
+  .foodie-offers-hero {
+    padding: 30px 15px;
+  }
+
+  .foodie-offers-title {
+    font-size: 28px;
+  }
+
+  .foodie-offers-subtitle {
+    font-size: 16px;
+  }
+
+  .foodie-offers-section-title {
+    font-size: 24px;
+  }
+
+  .foodie-offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .foodie-offer-image {
+    height: 150px;
+  }
+
+  .no-offers {
+    font-size: 16px;
+    padding: 20px;
+  }
+}
