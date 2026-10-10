@@ -406,7 +406,7 @@ app.use(passport.session());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://fayzr-food.vercel.app", "https://fayzr-food-admin.vercel.app", "*"], // Added * for easier testing on Vercel, recommend changing to specific domains later
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -442,7 +442,7 @@ app.use("/api/*", (req, res, next) => {
 });
 
 app.options("*", cors({
-  origin: ["http://localhost:5173", "http://localhost:5174"],
+  origin: ["http://localhost:5173", "http://localhost:5174", "https://fayzr-food.vercel.app", "https://fayzr-food-admin.vercel.app", "*"],
   credentials: true,
 }));
 
@@ -450,7 +450,7 @@ try {
   await connectDB();
 } catch (error) {
   console.error("MongoDB connection failed. Check MONGO_URL in backend/.env and ensure MongoDB is running.");
-  process.exit(1);
+  // process.exit(1);
 }
 
 app.use("/api/food", foodRouter);
@@ -476,5 +476,7 @@ server.on("error", (error) => {
   } else {
     console.error(`Server failed to start: ${error.code || error.name}`);
   }
-  process.exit(1);
+  // process.exit(1);
 });
+
+export default app;
