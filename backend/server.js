@@ -455,7 +455,10 @@ try {
 
 app.use("/api/food", foodRouter);
 app.use("/api/category", categoryRouter);
-app.use("/images", express.static("uploads"));
+app.use("/images", express.static(process.env.VERCEL ? "/tmp" : "uploads"));
+if (process.env.VERCEL) {
+  app.use("/images", express.static("uploads")); // Fallback to bundled static images on Vercel
+}
 app.use("/api/auth", userRouter);
 app.use("/api/cart", verifyToken, cartRouter);
 app.use("/api/order", verifyToken, orderRouter);
