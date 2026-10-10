@@ -372,6 +372,8 @@
 
 
 
+import path from "path";
+import { fileURLToPath } from "url";
 import express from "express";
 import cors from "cors";
 import session from "express-session";
@@ -455,9 +457,12 @@ try {
 
 app.use("/api/food", foodRouter);
 app.use("/api/category", categoryRouter);
-app.use("/images", express.static(process.env.VERCEL ? "/tmp" : "uploads"));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use("/images", express.static(process.env.VERCEL ? "/tmp" : path.join(__dirname, "uploads")));
 if (process.env.VERCEL) {
-  app.use("/images", express.static("uploads")); // Fallback to bundled static images on Vercel
+  app.use("/images", express.static(path.join(__dirname, "uploads"))); // Fallback to bundled static images on Vercel
 }
 app.use("/api/auth", userRouter);
 app.use("/api/cart", verifyToken, cartRouter);
