@@ -1,705 +1,475 @@
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-.foodie-offers-page {
-  font-family: 'Poppins', sans-serif;
+/* ─── Page Shell ─── */
+.offers-page {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   color: #0e1a13;
-  background-color: #f8fbfa;
+  background: #f8fbf9;
   min-height: 100vh;
 }
 
-.foodie-offers-header {
-  border-bottom: 1px solid #e8f2ec;
-  padding: 12px 0;
-  position: sticky;
-  top: 0;
-  background-color: #f8fbfa;
-  z-index: 100;
-}
-
-.foodie-offers-header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.foodie-offers-logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.foodie-offers-logo-icon {
-  width: 24px;
-  height: 24px;
-  color: #0e1a13;
-}
-
-.foodie-offers-logo-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0e1a13;
-  margin: 0;
-}
-
-.foodie-offers-nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.foodie-offers-nav-link {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #0e1a13;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  position: relative;
-  padding: 8px 0;
-}
-
-.foodie-offers-nav-link:hover {
-  color: #39e079;
-}
-
-.foodie-offers-nav-link.active {
-  color: #39e079;
-  font-weight: 600;
-}
-
-.foodie-offers-nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #39e079;
-  border-radius: 3px 3px 0 0;
-}
-
-.foodie-offers-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.foodie-offers-search-container {
-  display: flex;
-  align-items: center;
-  background-color: #e8f2ec;
-  border-radius: 12px;
-  overflow: hidden;
-  min-width: 200px;
-  max-width: 300px;
-  height: 40px;
-}
-
-.foodie-offers-search-icon {
-  padding: 0 12px;
-  color: #51946b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.foodie-offers-search-input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  padding: 8px 12px 8px 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  color: #0e1a13;
-  outline: none;
-}
-
-.foodie-offers-search-input::placeholder {
-  color: #51946b;
-}
-
-.foodie-offers-notification-button {
-  background-color: #e8f2ec;
-  border: none;
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #0e1a13;
-  transition: background-color 0.3s ease;
-}
-
-.foodie-offers-notification-button:hover {
-  background-color: #d1e6d9;
-}
-
-.foodie-offers-user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.foodie-offers-user-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.foodie-offers-main {
-  padding: 20px 40px;
-}
-
-.foodie-offers-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.foodie-offers-hero {
-  text-align: center;
-  margin-bottom: 40px;
-  padding: 20px 0;
-}
-
-.foodie-offers-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #0e1a13;
-  margin-bottom: 10px;
-}
-
-.foodie-offers-subtitle {
-  font-size: 1.125rem;
-  color: #51946b;
-  margin: 0;
-}
-
-.foodie-offers-section {
-  margin-bottom: 50px;
-}
-
-.foodie-offers-section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0e1a13;
-  margin-bottom: 20px;
-  padding-left: 10px;
-  position: relative;
-}
-
-.foodie-offers-section-title::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 24px;
-  background-color: #39e079;
-  border-radius: 2px;
-}
-
-.foodie-special-offers-grid {
+/* ─── Hero ─── */
+.offers-hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 40px;
 }
 
-.foodie-special-offer-card {
-  background: white;
-  border-radius: 12px;
+.offers-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.offers-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #3a8f5c;
+  text-transform: uppercase;
+}
+
+.offers-hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0d1f14;
+  margin: 0;
+}
+
+.offers-hero-copy p {
+  font-size: 1rem;
+  color: #4b6455;
+  margin: 0;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.offers-auto-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #3a8f5c;
+  font-weight: 500;
+}
+
+/* ─── Spotlight Card ─── */
+.offers-spotlight {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: block;
+  aspect-ratio: 4/3;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.foodie-special-offer-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.offers-spotlight:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
 }
 
-.foodie-special-offer-image {
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+.offers-spotlight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.foodie-special-offer-badge {
+.offers-spotlight-badge {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: #ff6b6b;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.foodie-special-offer-content {
-  padding: 20px;
-}
-
-.foodie-special-offer-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #0e1a13;
-  margin: 0 0 10px 0;
-}
-
-.foodie-special-offer-description {
-  font-size: 0.875rem;
-  color: #51946b;
-  margin: 0 0 15px 0;
-}
-
-.foodie-special-offer-footer {
+  top: 16px;
+  right: 16px;
+  background: #e63946;
+  color: #fff;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 1.1rem;
   display: flex;
+  align-items: baseline;
+  gap: 3px;
+  box-shadow: 0 2px 8px rgba(230,57,70,0.4);
+}
+
+.offers-spotlight-badge small {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.offers-spotlight-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.offers-spotlight-caption span:first-child {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a8ffcc;
+}
+
+.offers-spotlight-caption h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.offers-spotlight-link {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.foodie-special-offer-expiry {
-  font-size: 0.75rem;
-  color: #888;
-}
-
-.foodie-special-offer-button {
-  background-color: #39e079;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.875rem;
+  gap: 4px;
+  font-size: 0.85rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: #a8ffcc;
+  margin-top: 4px;
 }
 
-.foodie-special-offer-button:hover {
-  background-color: #2fc768;
-}
-
-.foodie-restaurant-offers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
-
-.foodie-restaurant-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.foodie-restaurant-card:hover {
-  transform: translateY(-3px);
-}
-
-.foodie-restaurant-image {
-  height: 120px;
-  background-size: cover;
-  background-position: center;
-}
-
-.foodie-restaurant-info {
-  padding: 15px;
-}
-
-.foodie-restaurant-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0e1a13;
-  margin: 0 0 5px 0;
-}
-
-.foodie-restaurant-offer {
-  font-size: 0.75rem;
-  color: #51946b;
-  margin: 0 0 10px 0;
-}
-
-.foodie-restaurant-button {
-  background-color: #e8f2ec;
-  color: #0e1a13;
-  border: none;
-  border-radius: 20px;
-  padding: 6px 12px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
-}
-
-.foodie-restaurant-button:hover {
-  background-color: #d1e6d9;
-}
-
-.foodie-category-offers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
-
-.foodie-category-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.foodie-category-card:hover {
-  transform: translateY(-3px);
-}
-
-.foodie-category-image {
-  height: 120px;
-  background-size: cover;
-  background-position: center;
-}
-
-.foodie-category-info {
-  padding: 15px;
-}
-
-.foodie-category-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0e1a13;
-  margin: 0 0 5px 0;
-}
-
-.foodie-category-offer {
-  font-size: 0.75rem;
-  color: #51946b;
-  margin: 0 0 10px 0;
-}
-
-.foodie-category-button {
-  background-color: #e8f2ec;
-  color: #0e1a13;
-  border: none;
-  border-radius: 20px;
-  padding: 6px 12px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
-}
-
-.foodie-category-button:hover {
-  background-color: #d1e6d9;
-}
-
-@media (max-width: 992px) {
-  .foodie-offers-header-content {
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 20px;
-  }
-  
-  .foodie-offers-nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    padding-top: 15px;
-    border-top: 1px solid #e8f2ec;
-  }
-  
-  .foodie-offers-search-container {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .foodie-offers-main {
-    padding: 20px;
-  }
-  
-  .foodie-offers-title {
-    font-size: 2rem;
-  }
-  
-  .foodie-offers-subtitle {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .foodie-special-offers-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .foodie-restaurant-offers-grid,
-  .foodie-category-offers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .foodie-offers-nav {
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 5px;
-    justify-content: flex-start;
-  }
-  
-  .foodie-offers-nav-link {
-    white-space: nowrap;
-  }
-} */
-
-
-
-
-
-
-
-
-
-.foodie-offers-page {
+/* ─── Collection Section ─── */
+.offers-collection {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #f7f9fc;
-  min-height: 100vh;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 0 24px 64px;
 }
 
-.foodie-offers-main {
-  padding: 20px 0;
-}
-
-.foodie-offers-container {
+.offers-collection-heading {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
 }
 
-.foodie-offers-hero {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #fff8f3 0%, #ffe8dc 100%);
-  border: 1px solid #f6d5c6;
-  border-radius: 12px;
-  color: #292521;
-}
-
-.foodie-offers-title {
-  font-size: 36px;
+.offers-collection-heading h2 {
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: #df5038;
+  color: #0d1f14;
+  margin: 0 0 6px;
 }
 
-.foodie-offers-subtitle {
-  font-size: 18px;
-  font-weight: 400;
-  color: #6c625d;
+.offers-collection-heading p {
+  font-size: 0.95rem;
+  color: #4b6455;
+  margin: 0;
 }
 
-.foodie-offers-sections {
+.offers-collection-icon {
+  font-size: 1.4rem;
+  color: #3a8f5c;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* ─── Filter Buttons ─── */
+.offers-filters {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.foodie-offers-section {
-  padding: 20px 0;
-}
-
-.foodie-offers-section-title {
-  font-size: 28px;
-  color: #1a2a44;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.foodie-offers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.foodie-offer-card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.foodie-offer-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.foodie-offer-image {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.foodie-offer-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #ef4444;
-  color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.foodie-offer-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 28px;
 }
 
-.foodie-offer-title {
-  font-size: 20px;
+.offers-filters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border: 2px solid #d4e8db;
+  background: #fff;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: #1a2a44;
+  color: #4b6455;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.foodie-offer-description {
-  font-size: 16px;
-  color: #374151;
+.offers-filters button:hover {
+  border-color: #3a8f5c;
+  color: #3a8f5c;
+  background: #f0faf4;
 }
 
-.foodie-offer-details {
+.offers-filters button[aria-pressed="true"] {
+  background: #3a8f5c;
+  border-color: #3a8f5c;
+  color: #fff;
+}
+
+.offers-filters button span {
+  background: rgba(255,255,255,0.25);
+  border-radius: 100px;
+  padding: 1px 7px;
+  font-size: 0.75rem;
+}
+
+.offers-filters button[aria-pressed="true"] span {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ─── Grid ─── */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* ─── Offer Card ─── */
+.offers-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offers-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.offers-card-image {
+  display: block;
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.offers-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.offers-card:hover .offers-card-image img {
+  transform: scale(1.04);
+}
+
+.offers-discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #e63946;
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.offers-type-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(4px);
+}
+
+/* ─── Card Body ─── */
+.offers-card-body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-size: 14px;
-  color: #6b7280;
+  padding: 20px;
+  flex: 1;
 }
 
-.foodie-offer-footer {
+.offers-target {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3a8f5c;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.offers-card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0d1f14;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.offers-description {
+  font-size: 0.875rem;
+  color: #4b6455;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.offers-price-row {
   display: flex;
-  justify-content: flex-end;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
 }
 
-.foodie-offer-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #2563eb;
-  color: #ffffff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+.offers-price-row strong {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #e63946;
 }
 
-.foodie-offer-button:hover {
-  background-color: #1e40af;
-  transform: translateY(-2px);
+.offers-price-row del {
+  font-size: 0.9rem;
+  color: #9fb8a5;
+  font-weight: 400;
 }
 
-.no-offers {
-  text-align: center;
-  font-size: 18px;
-  color: #1a2a44;
+.offers-from {
+  font-size: 0.8rem;
+  color: #4b6455;
   font-weight: 500;
-  padding: 30px;
-  background-color: #e5e7eb;
-  border-radius: 12px;
-  border: 2px dashed #2563eb;
 }
 
-.error-message {
-  background-color: #fee2e2;
-  color: #991b1b;
-  padding: 15px;
+.offers-eligibility {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #3a8f5c;
+  background: #f0faf4;
   border-radius: 8px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 16px;
+  padding: 6px 10px;
+  font-weight: 500;
 }
 
-.loading {
+.offers-card-bottom {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #edf5f0;
+}
+
+.offers-expiry {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: #9fb8a5;
+}
+
+.offers-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3a8f5c;
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 2px solid #3a8f5c;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+}
+
+.offers-card-action:hover {
+  background: #3a8f5c;
+  color: #fff;
+}
+
+/* ─── State (loading / error / empty) ─── */
+.offers-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-size: 18px;
-  color: #6b7280;
+  text-align: center;
+  gap: 12px;
+  padding: 64px 24px;
+  color: #4b6455;
 }
 
-.spinner {
-  width: 24px;
-  height: 24px;
-  border: 3px solid #d1d5db;
-  border-top: 3px solid #2563eb;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.offers-state svg {
+  font-size: 2.5rem;
+  color: #3a8f5c;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.offers-state h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #0d1f14;
 }
 
-.error-toast {
-  background-color: #ff4d4d;
-  color: #ffffff;
+.offers-state p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
-@media (max-width: 768px) {
-  .foodie-offers-page {
-    padding: 15px;
-  }
+.offers-state button {
+  background: #3a8f5c;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
 
-  .foodie-offers-hero {
-    padding: 30px 15px;
-  }
+.offers-state button:hover {
+  background: #2d7349;
+}
 
-  .foodie-offers-title {
-    font-size: 28px;
-  }
+.offers-state a {
+  color: #3a8f5c;
+  font-weight: 600;
+  text-decoration: none;
+}
 
-  .foodie-offers-subtitle {
-    font-size: 16px;
-  }
-
-  .foodie-offers-section-title {
-    font-size: 24px;
-  }
-
-  .foodie-offers-grid {
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .offers-hero {
     grid-template-columns: 1fr;
   }
-
-  .foodie-offer-image {
-    height: 150px;
+  .offers-spotlight {
+    max-width: 480px;
   }
+}
 
-  .no-offers {
-    font-size: 16px;
-    padding: 20px;
+@media (max-width: 600px) {
+  .offers-hero {
+    padding: 32px 16px 24px;
+  }
+  .offers-collection {
+    padding: 0 16px 48px;
+  }
+  .offers-grid {
+    grid-template-columns: 1fr;
   }
 }
