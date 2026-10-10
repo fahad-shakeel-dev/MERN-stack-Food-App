@@ -315,11 +315,12 @@ export const logout = (req, res) => {
 
 export const socialCallback = (req, res) => {
   const token = req.user.token;
+  const frontendUrl = process.env.FRONTEND_URL || "https://indusolive.versanex.site";
   res.cookie("token", token, {
     httpOnly: true,
-    sameSite: "strict",
-    secure: false, // true in production (HTTPS)
+    sameSite: "none",
+    secure: true,
     maxAge: 3 * 24 * 60 * 60 * 1000, // 3 days
   });
-  res.redirect(`http://localhost:5173/auth/callback?token=${token}`);
+  res.redirect(`${frontendUrl}/auth/callback?token=${token}`);
 };
