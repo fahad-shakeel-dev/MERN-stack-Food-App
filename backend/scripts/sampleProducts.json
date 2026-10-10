@@ -1,0 +1,322 @@
+[
+  {
+    "name": "Greek salad",
+    "description": "A refreshing Greek-style salad with crisp vegetables and a light dressing.",
+    "price": 650,
+    "category": "Salad",
+    "image": "sample-food_1.png",
+    "sourceImage": "food_1.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Veg salad",
+    "description": "A colorful mix of fresh vegetables for a light and satisfying meal.",
+    "price": 450,
+    "category": "Salad",
+    "image": "sample-food_2.png",
+    "sourceImage": "food_2.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Clover Salad",
+    "description": "Fresh greens and crunchy vegetables tossed together in a refreshing salad.",
+    "price": 550,
+    "category": "Salad",
+    "image": "sample-food_3.png",
+    "sourceImage": "food_3.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Chicken Salad",
+    "description": "Tender chicken served with crisp greens and a flavorful dressing.",
+    "price": 850,
+    "category": "Salad",
+    "image": "sample-food_4.png",
+    "sourceImage": "food_4.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Lasagna Rolls",
+    "description": "Lasagna-style rolls with a savory filling and a rich sauce.",
+    "price": 750,
+    "category": "Rolls",
+    "image": "sample-food_5.png",
+    "sourceImage": "food_5.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Peri Peri Rolls",
+    "description": "Flavorful rolls with a spicy peri peri kick.",
+    "price": 550,
+    "category": "Rolls",
+    "image": "sample-food_6.png",
+    "sourceImage": "food_6.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Chicken Rolls",
+    "description": "Tender chicken wrapped in soft rolls for a satisfying bite.",
+    "price": 600,
+    "category": "Rolls",
+    "image": "sample-food_7.png",
+    "sourceImage": "food_7.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Veg Rolls",
+    "description": "Vegetable-filled rolls with a delicious blend of flavors.",
+    "price": 450,
+    "category": "Rolls",
+    "image": "sample-food_8.png",
+    "sourceImage": "food_8.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Ripple Ice Cream",
+    "description": "Smooth ice cream with a sweet ripple running through every scoop.",
+    "price": 350,
+    "category": "Desserts",
+    "image": "sample-food_9.png",
+    "sourceImage": "food_9.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Fruit Ice Cream",
+    "description": "A creamy frozen treat with bright, fruity flavors.",
+    "price": 450,
+    "category": "Desserts",
+    "image": "sample-food_10.png",
+    "sourceImage": "food_10.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Jar Ice Cream",
+    "description": "A delicious serving of creamy ice cream in a convenient jar.",
+    "price": 400,
+    "category": "Desserts",
+    "image": "sample-food_11.png",
+    "sourceImage": "food_11.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Vanilla Ice Cream",
+    "description": "Classic vanilla ice cream with a smooth and creamy texture.",
+    "price": 300,
+    "category": "Desserts",
+    "image": "sample-food_12.png",
+    "sourceImage": "food_12.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Chicken Sandwich",
+    "description": "A hearty sandwich filled with chicken and fresh accompaniments.",
+    "price": 650,
+    "category": "Sandwich",
+    "image": "sample-food_13.png",
+    "sourceImage": "food_13.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Vegan Sandwich",
+    "description": "A satisfying plant-based sandwich packed with vegetables and flavor.",
+    "price": 550,
+    "category": "Sandwich",
+    "image": "sample-food_14.png",
+    "sourceImage": "food_14.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Grilled Sandwich",
+    "description": "A warm grilled sandwich with a crisp exterior and a savory filling.",
+    "price": 700,
+    "category": "Sandwich",
+    "image": "sample-food_15.png",
+    "sourceImage": "food_15.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Bread Sandwich",
+    "description": "A classic bread sandwich for a simple and satisfying meal.",
+    "price": 450,
+    "category": "Sandwich",
+    "image": "sample-food_16.png",
+    "sourceImage": "food_16.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Cup Cake",
+    "description": "A soft cupcake that makes a delightful little sweet treat.",
+    "price": 250,
+    "category": "Cake",
+    "image": "sample-food_17.png",
+    "sourceImage": "food_17.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Vegan Cake",
+    "description": "A delicious plant-based cake for a sweet finish to your meal.",
+    "price": 450,
+    "category": "Cake",
+    "image": "sample-food_18.png",
+    "sourceImage": "food_18.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Butterscotch Cake",
+    "description": "A soft cake with the rich, sweet flavor of butterscotch.",
+    "price": 400,
+    "category": "Cake",
+    "image": "sample-food_19.png",
+    "sourceImage": "food_19.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Sliced Cake",
+    "description": "A delicious slice of cake, perfect for a sweet break.",
+    "price": 350,
+    "category": "Cake",
+    "image": "sample-food_20.png",
+    "sourceImage": "food_20.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Garlic Mushroom",
+    "description": "Savory mushrooms prepared with aromatic garlic.",
+    "price": 600,
+    "category": "Pure Veg",
+    "image": "sample-food_21.png",
+    "sourceImage": "food_21.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Fried Cauliflower",
+    "description": "Crisp fried cauliflower with a delicious savory flavor.",
+    "price": 450,
+    "category": "Pure Veg",
+    "image": "sample-food_22.png",
+    "sourceImage": "food_22.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Mix Veg Pulao",
+    "description": "Fragrant pulao rice with a colorful mix of vegetables.",
+    "price": 550,
+    "category": "Pure Veg",
+    "image": "sample-food_23.png",
+    "sourceImage": "food_23.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Rice Zucchini",
+    "description": "A comforting rice dish paired with fresh zucchini.",
+    "price": 600,
+    "category": "Pure Veg",
+    "image": "sample-food_24.png",
+    "sourceImage": "food_24.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Cheese Pasta",
+    "description": "Pasta served with a rich and satisfying cheese sauce.",
+    "price": 950,
+    "category": "Pasta",
+    "image": "sample-food_25.png",
+    "sourceImage": "food_25.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Tomato Pasta",
+    "description": "Pasta tossed in a flavorful tomato sauce.",
+    "price": 850,
+    "category": "Pasta",
+    "image": "sample-food_26.png",
+    "sourceImage": "food_26.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Creamy Pasta",
+    "description": "A comforting bowl of pasta with a smooth, creamy sauce.",
+    "price": 1050,
+    "category": "Pasta",
+    "image": "sample-food_27.png",
+    "sourceImage": "food_27.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Chicken Pasta",
+    "description": "Tender chicken and pasta brought together in a flavorful sauce.",
+    "price": 1150,
+    "category": "Pasta",
+    "image": "sample-food_28.png",
+    "sourceImage": "food_28.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Butter Noodles",
+    "description": "Noodles tossed with butter for a simple, comforting meal.",
+    "price": 550,
+    "category": "Noodles",
+    "image": "sample-food_29.png",
+    "sourceImage": "food_29.png",
+    "isFeatured": true,
+    "isPopular": true
+  },
+  {
+    "name": "Veg Noodles",
+    "description": "Noodles with a colorful mix of vegetables and savory flavors.",
+    "price": 650,
+    "category": "Noodles",
+    "image": "sample-food_30.png",
+    "sourceImage": "food_30.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Somen Noodles",
+    "description": "Delicate somen noodles for a light and satisfying dish.",
+    "price": 750,
+    "category": "Noodles",
+    "image": "sample-food_31.png",
+    "sourceImage": "food_31.png",
+    "isFeatured": false,
+    "isPopular": false
+  },
+  {
+    "name": "Cooked Noodles",
+    "description": "A warm serving of noodles prepared for a satisfying meal.",
+    "price": 600,
+    "category": "Noodles",
+    "image": "sample-food_32.png",
+    "sourceImage": "food_32.png",
+    "isFeatured": false,
+    "isPopular": false
+  }
+]

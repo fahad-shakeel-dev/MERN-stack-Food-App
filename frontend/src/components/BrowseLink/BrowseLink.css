@@ -1,0 +1,65 @@
+.browse-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+  min-height: 52px;
+  padding: 8px 18px 8px 8px;
+  border: 1px solid #244c39;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #28573e, #173c30);
+  color: #fffaf0;
+  box-shadow: 0 6px 16px #173c301a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.browse-link-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff18;
+  color: #d4e5b3;
+  font-size: 18px;
+}
+
+.browse-link-label { text-align: left; }
+.browse-link-arrow { flex-shrink: 0; font-size: 20px; }
+
+.browse-link--cuisines {
+  background: #fff;
+  border-color: #d6dfcc;
+  color: #214832;
+  box-shadow: 0 4px 12px #2148320a;
+}
+
+.browse-link--cuisines .browse-link-icon {
+  color: #557432;
+  background: #edf2e5;
+}
+
+.browse-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px #173c3026;
+}
+
+.browse-link:focus-visible {
+  outline: 3px solid #8ca561;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .browse-link { gap: 9px; font-size: 13px; padding-right: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .browse-link { transition: none; }
+  .browse-link:hover { transform: none; }
+}

@@ -1,0 +1,117 @@
+/* Shared page bounds and spacing across all screen sizes. */
+.app .navbar-navbar {
+  padding: 8px 0;
+  min-height: 64px;
+  gap: 16px;
+}
+
+.app .navbar-navbar-logo {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.app .navbar-brand-image {
+  width: 140px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.app .navbar-navbar-left,
+.app .navbar-navbar-right {
+  min-width: 0;
+  gap: 20px;
+}
+
+.app .navbar-navbar-menu {
+  gap: 24px;
+}
+
+.app .header-container {
+  padding: 16px 0;
+}
+
+.app .header-content {
+  padding-inline: 10px;
+  border-radius: 12px;
+}
+
+/* The app provides the gutter; sections do not add another one. */
+.app .explore-menu,
+.app .explore-more,
+.app .menu-menu-page,
+.app .foodie-offers-page,
+.app .category-page,
+.app .cart,
+.app .contact-container,
+.app .product-detail,
+.app .place-order-place-order,
+.app .foodie-order-main {
+  padding-inline: 0;
+  margin-inline: 0;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.app .explore-menu-list,
+.app .food-display-list,
+.app .categories-container,
+.app .featured-container,
+.app .cuisines-container,
+.app .menu-menu-search-section,
+.app .menu-menu-tabs,
+.app .menu-menu-items {
+  padding-inline: 0;
+}
+
+.app .food-display-list,
+.app .cuisines-container {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.app .header-search,
+.app .search-wrapper,
+.app .search-input {
+  min-width: 0;
+}
+
+
+
+@media (max-width: 1024px) {
+  .app .navbar-navbar-menu,
+  .app .navbar-desktop-search,
+  .app .navbar-desktop-actions {
+    display: none;
+  }
+
+  .app .navbar-mobile-toggles {
+    display: flex;
+    align-items: center;
+  }
+
+  .app .navbar-mobile-menu {
+    display: flex;
+  }
+
+  .app .navbar-mobile-search {
+    display: block;
+    top: 100%;
+    padding-inline: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app .navbar-brand-image {
+    width: 112px;
+    height: 48px;
+  }
+
+  .app .navbar-navbar-left,
+  .app .navbar-navbar-right {
+    gap: 12px;
+  }
+
+  .app .food-display-list,
+  .app .cuisines-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  }
+}
