@@ -1111,25 +1111,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 84px;
-  max-width: 480px;
-  height: 40px;
-  padding: 0 16px;
-  background-color: #39e079;
-  color: #0e1a13;
+  gap: 7px;
+  min-width: 100px;
+  height: 42px;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #39e079 0%, #22c55e 100%);
+  color: #fff;
   font-size: 14px;
-  font-weight: bold;
-  line-height: 1.5;
-  letter-spacing: 0.015em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   border-radius: 9999px;
   cursor: pointer;
-  transition: background-color 0.3s;
   border: none;
+  box-shadow: 0 4px 14px rgba(57, 224, 121, 0.38);
+  transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.25s ease;
 }
 
 .navbar-order-button:hover,
 .navbar-mobile-signin:hover {
-  background-color: #2cc066;
+  background: linear-gradient(135deg, #2cc066 0%, #16a34a 100%);
+  box-shadow: 0 6px 20px rgba(57, 224, 121, 0.5);
+  transform: translateY(-1px);
+}
+
+.navbar-order-button:active,
+.navbar-mobile-signin:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(57, 224, 121, 0.3);
 }
 
 .navbar-cart-container {

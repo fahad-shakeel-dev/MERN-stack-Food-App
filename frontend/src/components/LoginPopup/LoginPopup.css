@@ -294,62 +294,46 @@
 
 
 
-
-
-
-.custom-social-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 12px;
+.social-login {
+  margin-top: 4px;
 }
 
 .custom-social-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 12px;
-  font-size: 16px;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
-  border: none;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.custom-social-button .social-icon {
-  width: 20px;
-  height: 20px;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
 .custom-social-button.google {
-  background: linear-gradient(90deg, #db4437 0%, #e57373 100%);
-  color: #fff;
+  background: #fff;
+  color: #3c4043;
+  border: 1.5px solid #dadce0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
 .custom-social-button.google:hover {
-  background: linear-gradient(90deg, #e57373 0%, #db4437 100%);
-  transform: translateY(-2px);
+  background: #f8fef9;
+  border-color: #39e079;
+  box-shadow: 0 2px 8px rgba(57,224,121,0.18);
+  transform: translateY(-1px);
 }
 
-.custom-social-button.facebook {
-  background: linear-gradient(90deg, #1877f2 0%, #4e91f9 100%);
-  color: #fff;
-}
-
-.custom-social-button.facebook:hover {
-  background: linear-gradient(90deg, #4e91f9 0%, #1877f2 100%);
-  transform: translateY(-2px);
+.custom-social-button.google:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 480px) {
   .custom-social-button {
     font-size: 13px;
-    padding: 10px;
-  }
-  .custom-social-button .social-icon {
-    width: 18px;
-    height: 18px;
+    padding: 10px 14px;
   }
 }
