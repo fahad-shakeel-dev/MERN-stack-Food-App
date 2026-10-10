@@ -45,7 +45,7 @@
 // const StoreContextProvider = (props) => {
 //   const [token, setToken] = useState(localStorage.getItem("token") || "");
 //   const [admin, setAdmin] = useState(localStorage.getItem("admin") === "true");
-//   const url = "http://localhost:4000";
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
 //   useEffect(() => {
 //     async function loadData() {
@@ -109,7 +109,7 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [admin, setAdmin] = useState(localStorage.getItem("admin") === "true");
   const [food_list, setFoodList] = useState([]);
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
   const addToCart = async (itemId) => {
     if (!cartItems[itemId]) {

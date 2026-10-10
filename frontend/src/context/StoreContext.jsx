@@ -258,7 +258,7 @@
 
 // const StoreContextProvider = (props) => {
 //   const [cartItems, setCartItems] = useState({});
-//   const url = "http://localhost:4000"; // Local testing
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app"; // Local testing
 //   const [token, setToken] = useState("");
 //   const [food_list, setFoodList] = useState([]);
 //   const [showLogin, setShowLogin] = useState(false);
@@ -416,7 +416,7 @@
 //   const [food_list, setFoodList] = useState([]);
 //   const [token, setToken] = useState(Cookies.get("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000"; // Local testing
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app"; // Local testing
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -570,7 +570,7 @@
 //   const [food_list, setFoodList] = useState([]);
 //   const [token, setToken] = useState(Cookies.get("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000"; // Local testing
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app"; // Local testing
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -736,7 +736,7 @@
 //   const [food_list, setFoodList] = useState([]);
 //   const [token, setToken] = useState(Cookies.get("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000"; // Correct URL
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app"; // Correct URL
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -908,7 +908,7 @@
 //   const [food_list, setFoodList] = useState([]);
 //   const [token, setToken] = useState(() => Cookies.get("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000"; // Correct URL
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app"; // Correct URL
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -1079,7 +1079,7 @@
 //   const [food_list, setFoodList] = useState([]);
 //   const [token, setToken] = useState(localStorage.getItem("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000";
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -1255,7 +1255,7 @@
 //   const [popular_list, setPopularList] = useState([]);
 //   const [token, setToken] = useState(localStorage.getItem("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000";
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -1446,7 +1446,7 @@
 //   const [popular_categories, setPopularCategories] = useState([]);
 //   const [token, setToken] = useState(localStorage.getItem("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000";
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -1636,7 +1636,7 @@
 //   const [popular_categories, setPopularCategories] = useState([]);
 //   const [token, setToken] = useState(localStorage.getItem("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000";
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -1833,7 +1833,7 @@
 //   const [popular_categories, setPopularCategories] = useState([]);
 //   const [token, setToken] = useState(localStorage.getItem("token") || "");
 //   const [showLogin, setShowLogin] = useState(false);
-//   const url = "http://localhost:4000";
+//   const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
 //   const addToCart = async (itemId) => {
 //     if (!cartItems[itemId]) {
@@ -2037,7 +2037,7 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [showLogin, setShowLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // Added loading state
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL || "https://mern-stack-food-app.vercel.app";
 
   // Fetch food list, categories, and offers
   const fetchFoodList = async () => {
