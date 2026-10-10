@@ -349,7 +349,7 @@ const PlaceOrder = () => {
     let orderData = {
       address: data,
       items: orderItems,
-      amount: Math.round(getTotalCartAmount()) + 2,
+      amount: Math.round(getTotalCartAmount()) + 200,
     };
 
     try {
@@ -515,12 +515,12 @@ const PlaceOrder = () => {
             <hr />
             <div className="place-order-cart-total-details">
               <p>Delivery Fee</p>
-              <p>{formatPrice(getTotalCartAmount() === 0 ? 0 : 2)}</p>
+              <p>{formatPrice(getTotalCartAmount() === 0 ? 0 : 200)}</p>
             </div>
             <hr />
             <div className="place-order-cart-total-details">
               <b>Total: </b>
-              <b>{formatPrice(getTotalCartAmount() === 0 ? 0 : Math.round(getTotalCartAmount()) + 2)}</b>
+              <b>{formatPrice(getTotalCartAmount() === 0 ? 0 : Math.round(getTotalCartAmount()) + 200)}</b>
             </div>
           </div>
           <button type="submit" className="place-order-button">CONFIRM ORDER</button>

@@ -351,13 +351,13 @@ const Cart = () => {
           <hr className="divider" />
           <div className="cart-total-details">
             <span>Delivery Fee</span>
-            <span>{formatPrice(getTotalCartAmount() === 0 ? 0 : 2)}</span>
+            <span>{formatPrice(getTotalCartAmount() === 0 ? 0 : 200)}</span>
           </div>
           <hr className="divider" />
           <div className="cart-total-details total">
             <strong>Total</strong>
             <strong>
-              {formatPrice((parseFloat(getTotalCartAmount()) + (getTotalCartAmount() === 0 ? 0 : 2)).toFixed(2))}
+              {formatPrice((parseFloat(getTotalCartAmount()) + (getTotalCartAmount() === 0 ? 0 : 200)).toFixed(2))}
             </strong>
           </div>
           <button
